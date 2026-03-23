@@ -7,6 +7,11 @@
 description = "Bootstrap or incremental deploy (creates cluster if needed, rebuilds changed components)"
 run = "tasks/scripts/cluster.sh"
 
+["cluster:gpu"]
+description = "Bootstrap or incremental deploy with NVIDIA GPU passthrough enabled"
+env = { CLUSTER_GPU = "1" }
+run = "tasks/scripts/cluster.sh"
+
 ["cluster:build:full"]
 description = "Build and deploy local k3s cluster with OpenShell"
 depends = [
